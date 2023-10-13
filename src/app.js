@@ -8,36 +8,45 @@
 window.onload = function() {
   //write your code here
 
+  function randomExcuse(who, action, what, when, randomNumber){
+    let excuse = "";
+    for (let i = 0; i < 4; i++) {
+      switch (i) {
+        case 0:
+          randomNumber = Math.floor(Math.random() * who.length);
+          excuse += who[randomNumber];
+          break;
+  
+        case 1:
+          randomNumber = Math.floor(Math.random() * action.length);
+          excuse += action[randomNumber];
+          break;
+  
+        case 2:
+          randomNumber = Math.floor(Math.random() * what.length);
+          excuse += what[randomNumber];
+          break;
+  
+        case 3:
+          randomNumber = Math.floor(Math.random() * when.length);
+          excuse += when[randomNumber];
+          break;
+      }
+    }
+    return excuse  
+  }
+
+  
   let who = ["Mi perro ", "Mi gato ", "Mi hermano ", "Mi coche "];
   let action = ["se ha comido ", "ha meado ", "ha roto ", "ha arrollado "];
   let what = ["mis deberes ", "mi mochila "];
   let when = ["hoy por la mañana.", "ayer por la noche.", "ahora mismito."];
 
   let result = "";
-  let rand = 0;
-  for (let i = 0; i < 4; i++) {
-    switch (i) {
-      case 0:
-        rand = Math.floor(Math.random() * who.length);
-        result += who[rand];
-        break;
+  let randomNumber = 0;
 
-      case 1:
-        rand = Math.floor(Math.random() * action.length);
-        result += action[rand];
-        break;
 
-      case 2:
-        rand = Math.floor(Math.random() * what.length);
-        result += what[rand];
-        break;
-
-      case 3:
-        rand = Math.floor(Math.random() * when.length);
-        result += when[rand];
-        break;
-    }
-  }
+  result = randomExcuse(who, action, what, when, randomNumber);
 
   document.querySelector("#excuse").innerHTML = result;
 };
