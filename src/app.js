@@ -9,12 +9,9 @@ window.onload = () => {
   //write your code here
 
   newRandomExcuse();
-
 };
 
-
-
-function randomExcuse(who, action, what, when, randomNumber){
+function randomExcuse(who, action, what, when, randomNumber) {
   let excuse = "";
   for (let i = 0; i < 4; i++) {
     switch (i) {
@@ -39,11 +36,10 @@ function randomExcuse(who, action, what, when, randomNumber){
         break;
     }
   }
-  return excuse  
+  return excuse;
 }
 
-function newRandomExcuse(){
-
+function newRandomExcuse() {
   let who = ["Mi perro ", "Mi gato ", "Mi hermano ", "Mi coche "];
   let action = ["se ha comido ", "ha meado ", "ha roto ", "ha arrollado "];
   let what = ["mis deberes ", "mi mochila "];
@@ -52,9 +48,7 @@ function newRandomExcuse(){
   let result = "";
   let randomNumber = 0;
 
-
   result = randomExcuse(who, action, what, when, randomNumber);
 
   document.querySelector("#excuse").innerHTML = result;
-
 }
